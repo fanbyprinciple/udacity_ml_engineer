@@ -20,5 +20,26 @@ where vx and vy are individual vectors in x and y axis
 note of caution a zero vector does not have unit vector.
 ![](vector_normalisation.png)
 
+6.  Dot product
+
+v.w  = ||v|| . ||w|| . cos theta
+
+chauchy swartz inequality 
+
+|| v.w || <= ||v|| . ||w||
+
+theta = arccosine (v.w/||v||.||w||)
+
+if v.w = - v.mag() . w.mag() it means the vectors are in opposite directions
+if v.w = v.mag() . w.mag() it means the vectors are in the same line
+
+if v.w = 0 it means either they are at 90 degrees to each other or one of them is zero.
+
+v.mag() = sqrt(v.dot(v))
+
+anglewith and dotproducts:
+
+![](vector_dotproduct.png)
+
 Next :
-https://classroom.udacity.com/courses/ud953/lessons/4374471116/concepts/45834932670923
+https://classroom.udacity.com/courses/ud953/lessons/4374471116/concepts/45834932720923

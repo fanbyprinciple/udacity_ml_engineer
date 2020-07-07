@@ -1,3 +1,6 @@
+from math import acos, degrees
+#from decimal import Decimal, getcontext
+
 class Vector(object):
     def __init__(self, coordinates):
         try:
@@ -61,5 +64,25 @@ class Vector(object):
         try:            
             new_coordinates = [c*x for x in self.coordinates]
             return Vector(new_coordinates)
+        except Exception as e:
+            print(e)
+
+    def angle_with(self, v, in_degrees= False):
+        
+        theta = acos(self.dot(v)/ (self.magnitude() * v.magnitude()))
+        # theta  = math.acos(self.normalise().dot(v.normalise()))
+        if (in_degrees):
+            return degrees(theta)
+        else:
+            return theta
+    
+
+    def dot(self, v):
+        try:
+            sum = 0
+            for x, y in zip(self.coordinates, v.coordinates):
+                sum += x* y
+            return sum            
+            
         except Exception as e:
             print(e)
