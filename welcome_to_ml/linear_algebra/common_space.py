@@ -1,24 +1,24 @@
 from vector import Vector
 
-a = Vector((7.887, 4.138))
-b = Vector(( -8.802, 6.776))
-print(a.dot(b))
+a = Vector((-7.579, -7.88))
+b = Vector(( 22.737,23.64))
+print("parallel_to: {}".format(a.is_parallel_to(b)))
+print("orthogonal_to: {}".format(b.is_orthogonal_to(a)))
 
 
-c = Vector((-5.955, -4.904, -1.874))
-d = Vector((-4.496, -8.755, 7.103))
-print(c.dot(d))
+c = Vector((-2.029, 9.97, 4.172))
+d = Vector((-9.231, -6.639, -7.245))
+print("parallel_to: {}".format(c.is_parallel_to(d)))
+print("orthogonal_to: {}".format(d.is_orthogonal_to(c)))
 
-e = Vector((3.183, -7.627))
-f = Vector(( -2.668, 5.319))
-print(e.angle_with(f))
+e = Vector((2.118, 4.827))
+f = Vector(( 0, 0))
+print("parallel_to: {}".format( e.is_parallel_to(f)))
+print("orthogonal_to: {}".format(f.is_orthogonal_to(e)))
 
 
-g = Vector((7.35, 0.221, 5.188))
-h = Vector((2.751, 8.259, 3.985))
-print(g.angle_with(h, in_degrees=True))
-
-# e = Vector((1.671, -1.012, -0.318))
-# scalar = 7.41
-# print(e.times_scalar(scalar))
+g = Vector((-2.328, -7.284, -1.214))
+h = Vector((-1.821, 1.072, -2.94))
+print("parallel_to: {}".format( g.is_parallel_to(h)))
+print("orthogonal_to: {}".format(g.is_orthogonal_to(h)))
 

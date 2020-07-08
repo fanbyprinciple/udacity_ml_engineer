@@ -41,5 +41,11 @@ anglewith and dotproducts:
 
 ![](vector_dotproduct.png)
 
+7. Vectors are aprallelif one vector is a scalar product of the ither
+
+checking if vectors are zero or orthogonal, fir irthiginal the doduct must be zero
+
+![](vector_parallel.png)
+
 Next :
-https://classroom.udacity.com/courses/ud953/lessons/4374471116/concepts/45834932720923
+https://classroom.udacity.com/courses/ud953/lessons/4374471116/concepts/45834932770923
