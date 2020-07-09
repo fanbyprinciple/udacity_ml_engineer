@@ -96,4 +96,39 @@ class Vector(object):
         return abs(self.dot(v)) < tolerance
     
     def is_zero(self, tolerance=1e-10):
-        return self.magnitude() <tolerance
+        return (self.magnitude() < tolerance)
+    
+    #component paralle to
+    def project_to(self,v):
+        v_unit_vector = v.normalized()
+        return v_unit_vector.times_scalar(self.dot(v_unit_vector))
+    
+    def find_orthogonal_to(self, v):
+        self_parallel = self.project_to(v)
+        return self.sub(self_parallel) 
+    
+    def orthogonal_decompose(self,v):
+        self_parallel = self.project_to(v)
+        self_perp = self.find_orthogonal_to(v)
+        return [self_parallel.coordinates, self_perp.coordinates]
+
+    def cross(self,v):
+        x1 = self.coordinates[0]
+        y1 = self.coordinates[1]
+        z1 = self.coordinates[2]
+        x2 = v.coordinates[0]
+        y2 = v.coordinates[1]
+        z2 = v.coordinates[2]
+        
+        x = y1*z2 - y2 * z1
+        y = - (x1* z2 - x2 * z1)
+        z =  x1 * y2 -x2 *y1
+
+        return Vector((x,y,z))
+
+    def area_of_parallelogram(self, v):
+        return self.cross(v).magnitude()
+    
+    def area_of_triangle(self, v):
+        return Decimal(0.5) * self.cross(v).magnitude()
+    
